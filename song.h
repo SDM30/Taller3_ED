@@ -20,6 +20,7 @@ class Song {
         std::string obtenerAlbum();
         unsigned int obtenerPopularidad();
         unsigned int obtenerDuracion();
+        bool obtenerExpl();
     // Setters
     // TODO #3: Definir las funciones setters de cada uno de los campos que definen una cancion. (Total de setters: 8)
         void fijarId(int nuevoId);
