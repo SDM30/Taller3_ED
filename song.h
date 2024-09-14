@@ -1,41 +1,51 @@
-#ifndef __SONG__H__
-#define __SONG__H__
+#ifndef SONG_H
+#define SONG_H
 
 #include <string>
 #include <vector>
 
-class song {
-    protected:
-        std::string id;
-        std::string nombre;
-        std::string genero;
-        std::vector<std::string> artistas;
-        std::string album;
-        unsigned int popularidad;
-        unsigned int duracion_ms;
-        bool expl;
+class Song {
     public:
-        song(std::string id, std::string nombre, std::string genero, std::string artista, 
-             std::string album, unsigned int popularidad, unsigned int duracion_ms,bool expl);
-        //Getters
-        std::string obtenerId();
+    // Constructor
+    Song(int id, std::string name, std::string genre,
+         std::string artists, std::string album,
+         int popularity, int durationMs, bool explicitContent);
+
+    // Getters
+    // TODO #2: Definir las funciones getters de cada uno de los campos que definen una cancion. (Total de getters: 8)
+        int obtenerId();
         std::string obtenerNombre();
         std::string obtenerGenero();
-        std::vector<std::string> obtenerArtistas();
+        std::string obtenerArtistas();
         std::string obtenerAlbum();
         unsigned int obtenerPopularidad();
         unsigned int obtenerDuracion();
-        bool obtenerExpl();
-        //Setters
-        void fijarId(std::string nuevoId);
+    // Setters
+    // TODO #3: Definir las funciones setters de cada uno de los campos que definen una cancion. (Total de setters: 8)
+        void fijarId(int nuevoId);
         void fijarNombre(std::string nuevoNombre);
         void fijarGenero(std::string nuevoGenero);
-        void fijarArtistas(std::vector<std::string> nuevosArtistas);
+        void fijarArtistas(std::string nuevosArtistas);
         void fijarAlbum(std::string nuevoAlbum);
         void fijarPopularidad(unsigned int nuevaPopularidad);
         void fijarDuracion(unsigned int nuevaDuracion);
         void fijarExpl(bool nuevaExp);
+
+    // Overloaded operators
+    bool operator>(const Song& other) const;
+    bool operator<(const Song& other) const;
+    bool operator==(const Song& other) const;
+
+    private:
+    // TODO #1: Definir cada uno de los campos de la cancion. (Total de campos: 8)
+        int id;
+        std::string nombre;
+        std::string genero;
+        std::string artistas;
+        std::string album;
+        unsigned int popularidad;
+        unsigned int duracion_ms;
+        bool expl;
 };
 
-#endif
-
+#endif // SONG_H
