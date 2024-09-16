@@ -124,7 +124,7 @@ int main( int argc, char* argv[] )
 
   // Comparar los arboles
   // TODO #19: Comparar que los tres recorridos inorden tengan los mismos datos en las mismas posiciones (O(N))
-  
+  // RECOMENDACION: HACER DE ULTIMO
   /* BUSQUEDA DE DATOS */
 
 /**** QUITAR CUANDO ESTE ROJO Y NEGRO
