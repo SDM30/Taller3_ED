@@ -51,15 +51,15 @@ unsigned int ArbolAVL<T>::tamano(){
 
 
 template < class T >
-bool ArbolAVL<T>::insertar(T &val){
+bool ArbolAVL<T>::insert(T &val){
     bool insertado = false;
-    this->raiz = insertar(this->raiz, val, insertado);
+    this->raiz = insert(this->raiz, val, insertado);
     return insertado;
 }
 
 //Recurrente
 template < class T >
-NodoAVL<T>* ArbolAVL<T>::insertar(NodoAVL<T>* nodo,T& val, bool& insertado){
+NodoAVL<T>* ArbolAVL<T>::insert(NodoAVL<T>* nodo,T& val, bool& insertado){
     //Caso base
     if (nodo == NULL) {
         insertado = true;
@@ -68,9 +68,9 @@ NodoAVL<T>* ArbolAVL<T>::insertar(NodoAVL<T>* nodo,T& val, bool& insertado){
     }
 
     if (val < nodo->obtenerDato()) {
-        nodo->fijarHijoIzq(insertar(nodo->obtenerHijoIzq(), val, insertado));
+        nodo->fijarHijoIzq(insert(nodo->obtenerHijoIzq(), val, insertado));
     } else if (val > nodo->obtenerDato()) {
-        nodo->fijarHijoDer(insertar(nodo->obtenerHijoDer(), val, insertado));
+        nodo->fijarHijoDer(insert(nodo->obtenerHijoDer(), val, insertado));
     } else {
         insertado = false;
         return nodo;
@@ -167,6 +167,13 @@ template < class T >
 void ArbolAVL<T>::inOrden(){
     if (!this->esVacio()) {
         (this->raiz)->inOrden();
+    }
+}
+
+template < class T>
+void ArbolAVL<T>::inordenEnLista(std::list<T> TList){
+    if (!this->esVacio()) {
+        (this->raiz)->inordenEnLista(TList);
     }
 }
 

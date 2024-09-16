@@ -111,7 +111,7 @@ int main( int argc, char* argv[] )
   TList inordenRN;
   TList inordenHeap;
   // TODO #18: Generar el recorrido en inorden de los arboles a través de una funcion de cada arbol
-  // miArbolAVL.inordenEnLista( inordenAVL );
+  miArbolAVL.inordenEnLista( inordenAVL );
   // miArbolRN.inordenEnLista( inordenRN );
   // miMonticulo.inordenEnLista( inordenHeap );
   //Hacer al final
@@ -276,17 +276,17 @@ bool addData( TArbol& arbol, const std::string& nomArch )
 
     Song valor(id, nombre, genero, artistas, album, popularidad, duracion_ms, expl);
 
-    std::cout << "ID: " << valor.obtenerId() << ", "
-              << "Nombre: " << valor.obtenerNombre() << ", "
-              << "Género: " << valor.obtenerGenero() << ", "
-              << "Artistas: " << valor.obtenerArtistas() << ", "
-              << "Álbum: " << valor.obtenerAlbum() << ", "
-              << "Popularidad: " << valor.obtenerPopularidad() << ", "
-              << "Duración (ms): " << valor.obtenerDuracion() << ", "
-              << "Explícito: " << valor.obtenerExpl() << std::endl;
+    // std::cout << "ID: " << valor.obtenerId() << ", "
+    //           << "Nombre: " << valor.obtenerNombre() << ", "
+    //           << "Género: " << valor.obtenerGenero() << ", "
+    //           << "Artistas: " << valor.obtenerArtistas() << ", "
+    //           << "Álbum: " << valor.obtenerAlbum() << ", "
+    //           << "Popularidad: " << valor.obtenerPopularidad() << ", "
+    //           << "Duración (ms): " << valor.obtenerDuracion() << ", "
+    //           << "Explícito: " << valor.obtenerExpl() << std::endl;
 
     // TODO #17: Implementar la función insert en cada uno de los arboles
-    arbol.insertar( valor );  // El arbol debe proveer el metodo "insert"
+    arbol.insert( valor );  // El arbol debe proveer el metodo "insert"
 
   } // elihw
   entrada.close( );

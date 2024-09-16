@@ -109,6 +109,15 @@ void NodoAVL<T>::inOrden(){
 }
 
 template < class T >
+void NodoAVL<T>::inordenEnLista(std::list<T> TList){
+    if (this->hijoIzq != NULL)
+        (this->hijoIzq)->inordenEnLista(TList);
+    TList.push_back(this->dato);
+    if (this->hijoDer != NULL)
+        (this->hijoDer)->inordenEnLista(TList);    
+}
+
+template < class T >
 NodoAVL<T>* NodoAVL<T>::obtenerMaximo(){
     NodoAVL<T>* nodoActual = this;
     

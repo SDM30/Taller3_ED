@@ -76,13 +76,17 @@ void Song::fijarExpl(bool nuevaExp) {
 // Overloaded operators
 // TODO #6: Implementar las funciones de sobrecarga de operadores >, < e ==.
 bool Song::operator>(const Song& other) const {
-    return true;
+    return this->id > other.id;
 }
-
 bool Song::operator<(const Song& other) const {
-    return true;
+    return this->id < other.id;
+}
+bool Song::operator==(const Song& other) const {
+    return this->id == other.id;
 }
 
-bool Song::operator==(const Song& other) const {
-    return true;
+std::ostream &operator<<( std::ostream& cout, Song& song) {
+
+    cout << "ID: " << song.obtenerId() << " ";
+    return cout;
 }

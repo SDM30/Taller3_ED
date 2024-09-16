@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <ostream>
 
 class Song {
     public:
@@ -50,5 +51,8 @@ class Song {
         unsigned int duracion_ms;
         bool expl;
 };
+
+// Declaración de la función global para el operador <<
+std::ostream& operator<<(std::ostream& cout, Song& song);
 
 #endif // SONG_H
