@@ -92,7 +92,7 @@ int main( int argc, char* argv[] )
 /**** QUITAR CUANDO ESTE MONTICULO
   // Llenar monticulo y calcular el tiempo empleado
   std::clock_t inicioLecturaHeap = std::clock( );
-  bool lecturaHeap = addData( miArbolRN, argv[ 1 ] );
+  bool lecturaHeap = addData( miMonticulo, argv[ 1 ] );
   std::clock_t finLecturaHeap = std::clock( );
   double tiempoLecturaHeap = ( finLecturaHeap - inicioLecturaHeap ) / double( CLOCKS_PER_SEC );
   if( lecturaHeap )
@@ -114,7 +114,7 @@ int main( int argc, char* argv[] )
   // miArbolAVL.inordenEnLista( inordenAVL );
   // miArbolRN.inordenEnLista( inordenRN );
   // miMonticulo.inordenEnLista( inordenHeap );
-
+  //Hacer al final
   if( inordenAVL.size( ) != inordenRN.size( ) && inordenAVL.size( ) != inordenHeap.size( ) )
   {
     std::cout << "Cantidad de elementos en los arboles no coinciden." << std::endl;
@@ -164,7 +164,7 @@ int main( int argc, char* argv[] )
 /**** QUITAR CUANDO ESTE MONTICULO
   // busqueda en monticulo y calcular el tiempo empleado
   std::clock_t inicioBusquedaHeap = std::clock( );
-  bool BusquedaHeap = searchData( miArbolAVL, argv[ 2 ] );
+  bool BusquedaHeap = searchData( miMonticulo, argv[ 2 ] );
   std::clock_t finBusquedaHeap = std::clock( );
   double tiempoBusquedaHeap = ( finBusquedaHeap - inicioBusquedaHeap ) / double( CLOCKS_PER_SEC );
   if( BusquedaHeap )
@@ -219,7 +219,7 @@ int main( int argc, char* argv[] )
 /**** QUITAR CUANDO ESTE MONTICULO
   // eliminacion en monticulo y calcular el tiempo empleado
   std::clock_t inicioeliminacionHeap = std::clock( );
-  bool eliminacionHeap = deleteData( miArbolAVL, argv[ 2 ] );
+  bool eliminacionHeap = deleteData( miMonticulo, argv[ 2 ] );
   std::clock_t fineliminacionHeap = std::clock( );
   double tiempoeliminacionHeap = ( fineliminacionHeap - inicioeliminacionHeap ) / double( CLOCKS_PER_SEC );
   if( eliminacionHeap )
