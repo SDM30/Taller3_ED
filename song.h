@@ -7,13 +7,15 @@
 class Song {
     public:
     // Constructor
-    Song(int id, std::string name, std::string genre,
+    Song(std::string id, std::string name, std::string genre,
          std::string artists, std::string album,
          int popularity, int durationMs, bool explicitContent);
 
+    Song();
+
     // Getters
     // TODO #2: Definir las funciones getters de cada uno de los campos que definen una cancion. (Total de getters: 8)
-        int obtenerId();
+        std::string obtenerId();
         std::string obtenerNombre();
         std::string obtenerGenero();
         std::string obtenerArtistas();
@@ -23,7 +25,7 @@ class Song {
         bool obtenerExpl();
     // Setters
     // TODO #3: Definir las funciones setters de cada uno de los campos que definen una cancion. (Total de setters: 8)
-        void fijarId(int nuevoId);
+        void fijarId(std::string nuevoId);
         void fijarNombre(std::string nuevoNombre);
         void fijarGenero(std::string nuevoGenero);
         void fijarArtistas(std::string nuevosArtistas);
@@ -39,7 +41,7 @@ class Song {
 
     private:
     // TODO #1: Definir cada uno de los campos de la cancion. (Total de campos: 8)
-        int id;
+        std::string id;
         std::string nombre;
         std::string genero;
         std::string artistas;
