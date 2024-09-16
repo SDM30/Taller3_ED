@@ -20,7 +20,7 @@ class ArbolAVL {
     NodoAVL<T>* insert(NodoAVL<T>* nodo,T& val, bool& insertado);
     bool eliminar(T &val);
     NodoAVL<T>* eliminar(NodoAVL<T>* nodo, T& val, bool& eliminado);
-    bool buscar(T &val);
+    bool search(T &val);
     void preOrden();
     void posOrden();
     void inOrden();

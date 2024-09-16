@@ -123,13 +123,13 @@ NodoAVL<T>* ArbolAVL<T>::eliminar(NodoAVL<T>* nodo, T& val, bool& eliminado) {
             nodo->fijarHijoIzq(eliminar(nodo->obtenerHijoIzq(), aux->obtenerDato(), eliminado));
         }
     }
-    //Balancear a mediad que avanza
+    //Balancear a medida que avanza
     return balancear(nodo);
 }
 
 //Iterativa
 template < class T >
-bool ArbolAVL<T>::buscar(T &val){
+bool ArbolAVL<T>::search(T &val){
     NodoAVL<T>* nodo = this->raiz;
     bool encontrado = false;
 

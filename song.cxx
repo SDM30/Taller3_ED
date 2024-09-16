@@ -43,7 +43,7 @@ bool Song::obtenerExpl() {
 // Setters
 // TODO #5: Implementar las funciones setters de cada uno de los campos que definen una cancion. (Total de setters: 8)
 void Song::fijarId(std::string nuevoId) { 
-    id = nuevoId; 
+    this->id = nuevoId; 
 }
 
 void Song::fijarNombre(std::string nuevoNombre) { 
@@ -87,6 +87,6 @@ bool Song::operator==(const Song& other) const {
 
 std::ostream &operator<<( std::ostream& cout, Song& song) {
 
-    cout << "ID: " << song.obtenerId() << " ";
+    cout << "ID: " << song.obtenerId() << std::endl;
     return cout;
 }

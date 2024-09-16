@@ -112,6 +112,7 @@ int main( int argc, char* argv[] )
   TList inordenHeap;
   // TODO #18: Generar el recorrido en inorden de los arboles a través de una funcion de cada arbol
   miArbolAVL.inordenEnLista( inordenAVL );
+  miArbolAVL.inOrden();
   // miArbolRN.inordenEnLista( inordenRN );
   // miMonticulo.inordenEnLista( inordenHeap );
   //Hacer al final
@@ -147,7 +148,7 @@ int main( int argc, char* argv[] )
 
   // busqueda en arbol AVL y calcular el tiempo empleado
   std::clock_t inicioBusquedaAVL = std::clock( );
-  bool BusquedaAVL = false; //searchData( miArbolAVL, argv[ 2 ] );
+  bool BusquedaAVL = searchData( miArbolAVL, argv[ 3 ] );
   std::clock_t finBusquedaAVL = std::clock( );
   double tiempoBusquedaAVL = ( finBusquedaAVL - inicioBusquedaAVL ) / double( CLOCKS_PER_SEC );
   if( BusquedaAVL )
@@ -276,7 +277,7 @@ bool addData( TArbol& arbol, const std::string& nomArch )
 
     Song valor(id, nombre, genero, artistas, album, popularidad, duracion_ms, expl);
 
-    // std::cout << "ID: " << valor.obtenerId() << ", "
+    // std::cout << "ID: " << valor.obtenerId() << std::endl;
     //           << "Nombre: " << valor.obtenerNombre() << ", "
     //           << "Género: " << valor.obtenerGenero() << ", "
     //           << "Artistas: " << valor.obtenerArtistas() << ", "
@@ -296,25 +297,34 @@ bool addData( TArbol& arbol, const std::string& nomArch )
 
 
 // -------------------------------------------------------------------------
-/*
+
 template< class TArbol >
 bool searchData( TArbol& arbol, const std::string& nomArch )
 {
   std::ifstream entrada( nomArch.c_str( ) );
+  std::string linea;
+
   if( !entrada )
     return( false );
-  while( !entrada.eof( ) )
+
+  while( std::getline(entrada,linea) )
   {
     // TODO #20: Leer la linea del archivo y extraer el identificador a buscar
-    
+    std::string id;
+
+    std::stringstream flujoLinea(linea);
+    std::getline(flujoLinea, id);
+  
+    Song valor;
+    valor.fijarId(id);
+    std::string resPrueba;
     // TODO #21: Implementar la función search en cada uno de los arboles
     arbol.search( valor );  // El arbol debe proveer el metodo "search"
-
   } // elihw
   entrada.close( );
   return( true );
 }
-*/
+
 // -------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------
