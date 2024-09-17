@@ -18,8 +18,8 @@ class ArbolAVL {
     unsigned int tamano();
     bool insert(T &val);
     NodoAVL<T>* insert(NodoAVL<T>* nodo,T& val, bool& insertado);
-    bool eliminar(T &val);
-    NodoAVL<T>* eliminar(NodoAVL<T>* nodo, T& val, bool& eliminado);
+    bool remove(T &val);
+    NodoAVL<T>* remove(NodoAVL<T>* nodo, T& val, bool& eliminado);
     bool search(T &val);
     void preOrden();
     void posOrden();

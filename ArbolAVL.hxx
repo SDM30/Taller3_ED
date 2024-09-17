@@ -80,14 +80,14 @@ NodoAVL<T>* ArbolAVL<T>::insert(NodoAVL<T>* nodo,T& val, bool& insertado){
 
 //Recurrente
 template < class T >
-bool ArbolAVL<T>::eliminar(T &val){
+bool ArbolAVL<T>::remove(T &val){
   bool eliminado = false;
-  this->raiz = eliminar(this->raiz, val, eliminado);
+  this->raiz = remove(this->raiz, val, eliminado);
   return eliminado;
 }
 
 template <class T>
-NodoAVL<T>* ArbolAVL<T>::eliminar(NodoAVL<T>* nodo, T& val, bool& eliminado) {
+NodoAVL<T>* ArbolAVL<T>::remove(NodoAVL<T>* nodo, T& val, bool& eliminado) {
     //Caso base
     if (nodo == NULL) {
         eliminado = false;
@@ -96,9 +96,9 @@ NodoAVL<T>* ArbolAVL<T>::eliminar(NodoAVL<T>* nodo, T& val, bool& eliminado) {
 
     //Ir por el lado Izquierdo
     if (val < nodo->obtenerDato()) {
-        nodo->fijarHijoIzq(eliminar(nodo->obtenerHijoIzq(), val, eliminado));
+        nodo->fijarHijoIzq(remove(nodo->obtenerHijoIzq(), val, eliminado));
     } else if (val > nodo->obtenerDato()) { //Ir por el lado derecho
-        nodo->fijarHijoDer(eliminar(nodo->obtenerHijoDer(), val, eliminado));
+        nodo->fijarHijoDer(remove(nodo->obtenerHijoDer(), val, eliminado));
     } else {
         //Encontro al nodo
         eliminado = true;
@@ -120,7 +120,7 @@ NodoAVL<T>* ArbolAVL<T>::eliminar(NodoAVL<T>* nodo, T& val, bool& eliminado) {
         else {
             aux = (nodo->obtenerHijoIzq())->obtenerMaximo();
             nodo->fijarDato(aux->obtenerDato());
-            nodo->fijarHijoIzq(eliminar(nodo->obtenerHijoIzq(), aux->obtenerDato(), eliminado));
+            nodo->fijarHijoIzq(remove(nodo->obtenerHijoIzq(), aux->obtenerDato(), eliminado));
         }
     }
     //Balancear a medida que avanza

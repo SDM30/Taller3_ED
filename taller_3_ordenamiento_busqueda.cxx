@@ -203,7 +203,7 @@ int main( int argc, char* argv[] )
 
   // eliminacion en arbol AVL y calcular el tiempo empleado
   std::clock_t inicioeliminacionAVL = std::clock( );
-  bool eliminacionAVL = false; //deleteData( miArbolAVL, argv[ 2 ] );
+  bool eliminacionAVL = deleteData( miArbolAVL, argv[ 2 ] );
   std::clock_t fineliminacionAVL = std::clock( );
   double tiempoeliminacionAVL = ( fineliminacionAVL - inicioeliminacionAVL ) / double( CLOCKS_PER_SEC );
   if( eliminacionAVL )
@@ -317,9 +317,9 @@ bool searchData( TArbol& arbol, const std::string& nomArch )
   
     Song valor;
     valor.fijarId(id);
-    std::string resPrueba;
     // TODO #21: Implementar la función search en cada uno de los arboles
-    arbol.search( valor );  // El arbol debe proveer el metodo "search"
+    //arbol.search( valor );  // El arbol debe proveer el metodo "search"
+
   } // elihw
   entrada.close( );
   return( true );
@@ -328,25 +328,48 @@ bool searchData( TArbol& arbol, const std::string& nomArch )
 // -------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------
-/*
+
 template< class TArbol >
 bool deleteData( TArbol& arbol, const std::string& nomArch )
 {
   std::ifstream entrada( nomArch.c_str( ) );
+  std::string linea;
+
   if( !entrada )
     return( false );
-  while( !entrada.eof( ) )
+  while( std::getline(entrada,linea) )
   {
     // TODO #22: Leer la linea del archivo y extraer el identificador a eliminar
-    
+    std::string id;
+
+    std::stringstream flujoLinea(linea);
+    std::getline(flujoLinea, id);
+  
+    Song valor;
+    valor.fijarId(id);
+
+    // PRUEBA
+    if (arbol.search( valor )) {
+        std::cout << id << " = En el árbol" << std::endl;
+    } else {
+        std::cout << id << " = No está en el árbol" << std::endl;
+    }
+
     // TODO #23: Implementar la función delete en cada uno de los arboles
-    arbol.delete( valor );  // El arbol debe proveer el metodo "delete"
+    arbol.remove( valor );  // El arbol debe proveer el metodo "delete"
+
+
+    if (arbol.search( valor )) {
+        std::cout << id << " = En el árbol" << std::endl;
+    } else {
+        std::cout << id << " = No está en el árbol" << std::endl;
+    }
 
   } // elihw
   entrada.close( );
   return( true );
 }
-*/
+
 // -------------------------------------------------------------------------
 
 // eof - taller_3_ordenamiento_busqueda.cxx
