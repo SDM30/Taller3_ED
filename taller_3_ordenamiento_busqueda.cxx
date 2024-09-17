@@ -348,22 +348,8 @@ bool deleteData( TArbol& arbol, const std::string& nomArch )
     Song valor;
     valor.fijarId(id);
 
-    // PRUEBA
-    if (arbol.search( valor )) {
-        std::cout << id << " = En el árbol" << std::endl;
-    } else {
-        std::cout << id << " = No está en el árbol" << std::endl;
-    }
-
     // TODO #23: Implementar la función delete en cada uno de los arboles
     arbol.remove( valor );  // El arbol debe proveer el metodo "delete"
-
-
-    if (arbol.search( valor )) {
-        std::cout << id << " = En el árbol" << std::endl;
-    } else {
-        std::cout << id << " = No está en el árbol" << std::endl;
-    }
 
   } // elihw
   entrada.close( );
