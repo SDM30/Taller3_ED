@@ -306,7 +306,8 @@ bool searchData( TArbol& arbol, const std::string& nomArch )
 
   if( !entrada )
     return( false );
-
+  //PRUEBA
+  std::cout<<std::endl<<"---------BUSQUEDA---------"<<std::endl;
   while( std::getline(entrada,linea) )
   {
     // TODO #20: Leer la linea del archivo y extraer el identificador a buscar
@@ -319,6 +320,13 @@ bool searchData( TArbol& arbol, const std::string& nomArch )
     valor.fijarId(id);
     // TODO #21: Implementar la función search en cada uno de los arboles
     //arbol.search( valor );  // El arbol debe proveer el metodo "search"
+    
+    //PRUEBA
+    if (arbol.search( valor )) {
+      std::cout<<valor.obtenerId()<<"= HA SIDO encontrado"<<std::endl;
+    } else {
+      std::cout<<valor.obtenerId()<<"= NO FUE encontrado"<<std::endl;
+    }
 
   } // elihw
   entrada.close( );
@@ -337,6 +345,8 @@ bool deleteData( TArbol& arbol, const std::string& nomArch )
 
   if( !entrada )
     return( false );
+  //PRUEBA
+  std::cout<<std::endl<<"---------ELIMINACION---------"<<std::endl;
   while( std::getline(entrada,linea) )
   {
     // TODO #22: Leer la linea del archivo y extraer el identificador a eliminar
@@ -349,8 +359,12 @@ bool deleteData( TArbol& arbol, const std::string& nomArch )
     valor.fijarId(id);
 
     // TODO #23: Implementar la función delete en cada uno de los arboles
-    arbol.remove( valor );  // El arbol debe proveer el metodo "delete"
-
+    //arbol.remove( valor );  // El arbol debe proveer el metodo "delete"
+    if (arbol.remove( valor )) {
+      std::cout<<valor.obtenerId()<<"= HA SIDO eliminado"<<std::endl;
+    } else {
+      std::cout<<valor.obtenerId()<<"= NO FUE encontrado"<<std::endl;
+    }
   } // elihw
   entrada.close( );
   return( true );
