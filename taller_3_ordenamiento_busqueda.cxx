@@ -113,7 +113,7 @@ int main( int argc, char* argv[] )
   // TODO #18: Generar el recorrido en inorden de los arboles a través de una funcion de cada arbol
   miArbolAVL.inordenEnLista( inordenAVL );
   miArbolAVL.inOrden(); //PRUEBA
-  std::cout<<"Tamaño del árbol antes de eliminar = "<< miArbolAVL.tamano() <<std::endl;
+  std::cout<<"Tamaño del árbol antes de eliminar = "<< miArbolAVL.tamano() <<std::endl; //PRUEBA
   // miArbolRN.inordenEnLista( inordenRN );
   // miMonticulo.inordenEnLista( inordenHeap );
   //Hacer al final
@@ -217,7 +217,7 @@ int main( int argc, char* argv[] )
     << "Error al leer \"" << argv[ 2 ]
     << "\" para eliminacion el arbol AVL."
     << std::endl;
-  std::cout<<"Tamaño del árbol despues de eliminar = "<< miArbolAVL.tamano() <<std::endl;
+  std::cout<<"Tamaño del árbol despues de eliminar = "<< miArbolAVL.tamano() <<std::endl; //PRUEBA
 /**** QUITAR CUANDO ESTE MONTICULO
   // eliminacion en monticulo y calcular el tiempo empleado
   std::clock_t inicioeliminacionHeap = std::clock( );
