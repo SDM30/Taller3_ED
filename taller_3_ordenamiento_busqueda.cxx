@@ -112,7 +112,7 @@ int main( int argc, char* argv[] )
   TList inordenHeap;
   // TODO #18: Generar el recorrido en inorden de los arboles a través de una funcion de cada arbol
   miArbolAVL.inordenEnLista( inordenAVL );
-  miArbolAVL.inOrden();
+  miArbolAVL.inOrden(); //PRUEBA
   std::cout<<"Tamaño del árbol antes de eliminar = "<< miArbolAVL.tamano() <<std::endl;
   // miArbolRN.inordenEnLista( inordenRN );
   // miMonticulo.inordenEnLista( inordenHeap );
@@ -244,7 +244,6 @@ template< class TArbol >
 bool addData( TArbol& arbol, const std::string& nomArch )
 {
   std::ifstream entrada( nomArch.c_str( ) );
-  std::cout << nomArch.c_str() << std::endl;
   std::string linea;
   if( !entrada )
     return( false );
@@ -365,7 +364,7 @@ bool deleteData( TArbol& arbol, const std::string& nomArch )
 
   std::cout<<std::endl<<"BUSQUEDA POST-ELIMINACION"<<std::endl;
   searchData(arbol, nomArch);
-  
+
   return( true );
 }
 
