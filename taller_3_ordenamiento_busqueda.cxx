@@ -113,6 +113,7 @@ int main( int argc, char* argv[] )
   // TODO #18: Generar el recorrido en inorden de los arboles a través de una funcion de cada arbol
   miArbolAVL.inordenEnLista( inordenAVL );
   miArbolAVL.inOrden();
+  std::cout<<"Tamaño del árbol antes de eliminar = "<< miArbolAVL.tamano() <<std::endl;
   // miArbolRN.inordenEnLista( inordenRN );
   // miMonticulo.inordenEnLista( inordenHeap );
   //Hacer al final
@@ -216,7 +217,7 @@ int main( int argc, char* argv[] )
     << "Error al leer \"" << argv[ 2 ]
     << "\" para eliminacion el arbol AVL."
     << std::endl;
-
+  std::cout<<"Tamaño del árbol despues de eliminar = "<< miArbolAVL.tamano() <<std::endl;
 /**** QUITAR CUANDO ESTE MONTICULO
   // eliminacion en monticulo y calcular el tiempo empleado
   std::clock_t inicioeliminacionHeap = std::clock( );
@@ -243,6 +244,7 @@ template< class TArbol >
 bool addData( TArbol& arbol, const std::string& nomArch )
 {
   std::ifstream entrada( nomArch.c_str( ) );
+  std::cout << nomArch.c_str() << std::endl;
   std::string linea;
   if( !entrada )
     return( false );
@@ -311,16 +313,14 @@ bool searchData( TArbol& arbol, const std::string& nomArch )
   while( std::getline(entrada,linea) )
   {
     // TODO #20: Leer la linea del archivo y extraer el identificador a buscar
-    std::string id;
-
-    std::stringstream flujoLinea(linea);
-    std::getline(flujoLinea, id);
-  
+    std::string id = linea;
     Song valor;
     valor.fijarId(id);
+    //std::cout<<valor.obtenerId()<<std::endl;
     // TODO #21: Implementar la función search en cada uno de los arboles
     //arbol.search( valor );  // El arbol debe proveer el metodo "search"
     
+
     //PRUEBA
     if (arbol.search( valor )) {
       std::cout<<valor.obtenerId()<<"= HA SIDO encontrado"<<std::endl;
@@ -350,14 +350,9 @@ bool deleteData( TArbol& arbol, const std::string& nomArch )
   while( std::getline(entrada,linea) )
   {
     // TODO #22: Leer la linea del archivo y extraer el identificador a eliminar
-    std::string id;
-
-    std::stringstream flujoLinea(linea);
-    std::getline(flujoLinea, id);
-  
+    std::string id = linea;
     Song valor;
     valor.fijarId(id);
-
     // TODO #23: Implementar la función delete en cada uno de los arboles
     //arbol.remove( valor );  // El arbol debe proveer el metodo "delete"
     if (arbol.remove( valor )) {
@@ -367,6 +362,10 @@ bool deleteData( TArbol& arbol, const std::string& nomArch )
     }
   } // elihw
   entrada.close( );
+
+  std::cout<<std::endl<<"BUSQUEDA POST-ELIMINACION"<<std::endl;
+  searchData(arbol, nomArch);
+  
   return( true );
 }
 
