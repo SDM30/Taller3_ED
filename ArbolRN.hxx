@@ -1,14 +1,16 @@
 #include "ArbolRN.h"
 
+template <typename T>
+bool ArbolRN<T>::insert(const T& val) {
+    auto result = set.insert(val);  // Intenta insertar el valor
+    return result.second;  // Retorna true si fue insertado, false si ya existia
+}
+
 // Buscar un valor en el set
 template <typename T>
-T ArbolRN<T>::search(const T& val) {
+bool ArbolRN<T>::search(const T& val) {
     auto it = set.find(val);
-    if (it != set.end()) {
-        return *it;  // Devolver el valor al que apunta el iterador
-    } else { //En caso de que el valor no este en el arbol.
-        throw std::runtime_error("Valor no encontrado en el ArbolRN.");
-    }
+    return it != set.end();  // Retorna true si encuentra el valor, false si no
 }
 
 // Eliminar un valor del set
@@ -19,10 +21,8 @@ bool ArbolRN<T>::remove(const T& val) {
 }
 
 template <typename T>
-std::list<T> ArbolRN<T>::inordenEnLista() const {
-    std::list<T> resultado;
+void ArbolRN<T>::inordenEnLista(std::list<T>& resultado) const {
     for (const T& elem : set) {
-        resultado.push_back(elem);  // Los elementos ya están en orden inorden
+        resultado.push_back(elem);  // Los elementos ya estan en orden inorden
     }
-    return result;
 }
