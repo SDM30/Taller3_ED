@@ -109,7 +109,7 @@ void NodoAVL<T>::inOrden(){
 }
 
 template < class T >
-void NodoAVL<T>::inordenEnLista(std::list<T> TList){
+void NodoAVL<T>::inordenEnLista(std::list<T>& TList){
     if (this->hijoIzq != NULL)
         (this->hijoIzq)->inordenEnLista(TList);
     TList.push_back(this->dato);

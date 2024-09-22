@@ -9,7 +9,7 @@
 #include "song.h"
 
 // TODO #7: incluir cabecera arbol AVL
-//#include "ArbolAVL.h"
+#include "ArbolAVL.h"
 // TODO #8: incluir cabecera arbol RN a utilizar
 #include "ArbolRN.h"
 // TODO #9: incluir cabecera monticulo
@@ -19,7 +19,7 @@
 typedef std::list< Song > TList;
 
 // TODO #10: definir nombre alternativo para arbol AVL de tipo Song
-//typedef ArbolAVL< Song > TAVL;
+typedef ArbolAVL< Song > TAVL;
 // TODO #11: definir nombre alternativo para arbol RN de tipo Song
 typedef ArbolRN < Song >  TSet;
 // TODO #12: definir nombre alternativo para monticulo de tipo Song
@@ -47,7 +47,7 @@ int main( int argc, char* argv[] )
 
   // Declarar arboles a usar
   // TODO #13: Declarar arbol AVL a utilizar
-  //TAVL miArbolAVL;
+  TAVL miArbolAVL;
   // TODO #14: Declarar arbol RN a utilizar
   TSet miArbolRN;
   // TODO #15: Declarar monticulo a utilizar
@@ -69,7 +69,7 @@ int main( int argc, char* argv[] )
       << "\" para llenar el arbol RN."
       << std::endl;
   //AVL
-  /* Llenar arbol AVL y calcular el tiempo empleado
+
   std::clock_t inicioLecturaAVL = std::clock( );
   bool lecturaAVL = addData( miArbolAVL, argv[ 1 ] );
   std::clock_t finLecturaAVL = std::clock( );
@@ -84,7 +84,7 @@ int main( int argc, char* argv[] )
     << "Error al leer \"" << argv[ 1 ]
     << "\" para llenar el arbol AVL."
     << std::endl;
-    */
+
 
 /**** QUITAR CUANDO ESTE MONTICULO
   // Llenar monticulo y calcular el tiempo empleado
@@ -108,12 +108,15 @@ int main( int argc, char* argv[] )
   TList inordenRN;
   TList inordenHeap;
   // TODO #18: Generar el recorrido en inorden de los arboles a través de una funcion de cada arbol
-  //miArbolAVL.inordenEnLista( inordenAVL );
-  //miArbolAVL.inOrden();
+  miArbolAVL.inordenEnLista( inordenAVL );
   miArbolRN.inordenEnLista( inordenRN );
+  if (!inordenRN.empty())
+    std::cout<<"elementos del RN = "<<inordenRN.size()<<std::endl;
+  if (!inordenAVL.empty())
+    std::cout<<"elementos del AVL = "<<inordenRN.size()<<std::endl;
   // miMonticulo.inordenEnLista( inordenHeap );
   //Hacer al final
-  if( inordenAVL.size( ) != inordenRN.size( ) && inordenAVL.size( ) != inordenHeap.size( ) )
+  if( inordenAVL.size( ) != inordenRN.size( ))
   {
     std::cout << "Cantidad de elementos en los arboles no coinciden." << std::endl;
     return( -1 );
@@ -122,12 +125,31 @@ int main( int argc, char* argv[] )
 
   // Comparar los arboles
   // TODO #19: Comparar que los tres recorridos inorden tengan los mismos datos en las mismas posiciones (O(N))
-  // RECOMENDACION: HACER DE ULTIMO
+  TList::iterator itAVL;
+  TList::iterator itRN;
+  for (itAVL = inordenAVL.begin(), itRN = inordenRN.begin(); itAVL != inordenAVL.end(); itAVL++, itRN ++){
+    Song cancionAVL = *itAVL;
+    Song cancionRN = *itRN;
+    if (cancionAVL.obtenerId() != cancionRN.obtenerId()){
+      std::cout<<"------------------------------------"<<std::endl;
+      std::cout<<"DIFERECIA"<<std::endl;
+      std::cout<<"AVL = "<<cancionAVL.obtenerId()<<std::endl;
+      std::cout<<"RN  =  "<<cancionRN.obtenerId()<<std::endl;
+      std::cout<<"------------------------------------"<<std::endl;
+    }
+    if (cancionAVL.obtenerId() == cancionRN.obtenerId()){
+      std::cout<<"------------------------------------"<<std::endl;
+      std::cout<<"IGUALES"<<std::endl;
+      std::cout<<"AVL = "<<cancionAVL.obtenerId()<<std::endl;
+      std::cout<<"RN  =  "<<cancionRN.obtenerId()<<std::endl;
+      std::cout<<"------------------------------------"<<std::endl;
+    }
+  }
   /* BUSQUEDA DE DATOS */
 
   // busqueda en arbol rojinegro y calcular el tiempo empleado
   std::clock_t inicioBusquedaRN = std::clock( );
-  bool BusquedaRN = searchData( miArbolRN, argv[ 2 ] );
+  bool BusquedaRN = searchData( miArbolRN, argv[ 3 ] );
   std::clock_t finBusquedaRN = std::clock( );
   double tiempoBusquedaRN = ( finBusquedaRN - inicioBusquedaRN ) / double( CLOCKS_PER_SEC );
   if( BusquedaRN )
@@ -137,13 +159,13 @@ int main( int argc, char* argv[] )
       << std::endl;
   else
     std::cout
-      << "Error al leer \"" << argv[ 2 ]
+      << "Error al leer \"" << argv[ 3 ]
       << "\" para busqueda el arbol RN."
       << std::endl;
 
   //AVL
   // busqueda en arbol AVL y calcular el tiempo empleado
-  /*std::clock_t inicioBusquedaAVL = std::clock( );
+  std::clock_t inicioBusquedaAVL = std::clock( );
   bool BusquedaAVL = searchData( miArbolAVL, argv[ 3 ] );
   std::clock_t finBusquedaAVL = std::clock( );
   double tiempoBusquedaAVL = ( finBusquedaAVL - inicioBusquedaAVL ) / double( CLOCKS_PER_SEC );
@@ -154,10 +176,10 @@ int main( int argc, char* argv[] )
     << std::endl;
   else
     std::cout
-    << "Error al leer \"" << argv[ 2 ]
+    << "Error al leer \"" << argv[ 3 ]
     << "\" para busqueda el arbol AVL."
     << std::endl;
-*/
+
 /**** QUITAR CUANDO ESTE MONTICULO
   // busqueda en monticulo y calcular el tiempo empleado
   std::clock_t inicioBusquedaHeap = std::clock( );
@@ -195,7 +217,6 @@ int main( int argc, char* argv[] )
       << std::endl;
 
   //AVL
-  /*
   // eliminacion en arbol AVL y calcular el tiempo empleado
   std::clock_t inicioeliminacionAVL = std::clock( );
   bool eliminacionAVL = deleteData( miArbolAVL, argv[ 2 ] );
@@ -211,7 +232,35 @@ int main( int argc, char* argv[] )
     << "Error al leer \"" << argv[ 2 ]
     << "\" para eliminacion el arbol AVL."
     << std::endl;
-*/
+  
+  //Despues de eliminar deben ser iguales
+  inordenAVL.clear();
+  inordenRN.clear();
+  miArbolAVL.inordenEnLista( inordenAVL );
+  miArbolAVL.inOrden();
+  miArbolRN.inordenEnLista( inordenRN );
+
+  TList::iterator itAVLelim;
+  TList::iterator itRNelim;
+  for (itAVLelim = inordenAVL.begin(), itRNelim = inordenRN.begin(); itAVLelim != inordenAVL.end(); itAVLelim++, itRNelim ++){
+    Song cancionAVL = *itAVLelim;
+    Song cancionRN = *itRNelim;
+    if (cancionAVL.obtenerId() != cancionRN.obtenerId()){
+      std::cout<<"------------------------------------"<<std::endl;
+      std::cout<<"DIFERECIA"<<std::endl;
+      std::cout<<"AVL = "<<cancionAVL.obtenerId()<<std::endl;
+      std::cout<<"RN  =  "<<cancionRN.obtenerId()<<std::endl;
+      std::cout<<"------------------------------------"<<std::endl;
+    }
+    if (cancionAVL.obtenerId() == cancionRN.obtenerId()){
+      std::cout<<"------------------------------------"<<std::endl;
+      std::cout<<"IGUALES"<<std::endl;
+      std::cout<<"AVL = "<<cancionAVL.obtenerId()<<std::endl;
+      std::cout<<"RN  =  "<<cancionRN.obtenerId()<<std::endl;
+      std::cout<<"------------------------------------"<<std::endl;
+    }
+  }
+
 /**** QUITAR CUANDO ESTE MONTICULO
   // eliminacion en monticulo y calcular el tiempo empleado
   std::clock_t inicioeliminacionHeap = std::clock( );

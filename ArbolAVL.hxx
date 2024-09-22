@@ -171,7 +171,7 @@ void ArbolAVL<T>::inOrden(){
 }
 
 template < class T>
-void ArbolAVL<T>::inordenEnLista(std::list<T> TList){
+void ArbolAVL<T>::inordenEnLista(std::list<T>& TList){
     if (!this->esVacio()) {
         (this->raiz)->inordenEnLista(TList);
     }

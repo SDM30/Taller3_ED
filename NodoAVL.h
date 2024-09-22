@@ -24,7 +24,7 @@ class NodoAVL {
     void preOrden();
     void posOrden();
     void inOrden();
-    void inordenEnLista(std::list<T> TList);
+    void inordenEnLista(std::list<T>& TList);
     NodoAVL<T> *obtenerMaximo();
     NodoAVL<T> *rotacionIzq();
     NodoAVL<T> *rotacionDer();

@@ -1,0 +1,11 @@
+id;name;genre;artists;album;popularity;duration_ms;explicit
+7kr3xZk4yb3YSZ4VFtg2Qt;Acoustic;acoustic;Billy Raffoul;1975;58;172199;FALSO
+1kJygfS4eoVziBBI93MSYp;Acoustic;acoustic;Billy Raffoul;A Few More Hours at YYZ;57;172202;FALSO
+6lynns69p4zTCRxmmiSY1x;Here Comes the Sun - Acoustic;acoustic;Molly Hocking, Bailey Rushlow;Here Comes the Sun (Acoustic);42;144786;FALSO
+1RC9slv335IfLce5vt9KTW;Acoustic #3;acoustic;The Goo Goo Dolls;Dizzy up the Girl;46;116573;FALSO
+5o9L8xBuILoVjLECSBi7Vo;My Love Mine All Mine - Acoustic Instrumental;acoustic;Guus Dielissen, Casper Esmann;My Love Mine All Mine (Acoustic Instrumental);33;133922;FALSO
+742ZnC1OgUGIScdzXEy5ui;Acoustic;acoustic;Ling tosite sigure;#4;14;238146;FALSO
+3vpJdk93GzerZnlou6Ua0z;Beautiful Things - Acoustic;acoustic;Benson Boone;Daydream;0;201248;FALSO
+42qGA2116mkpSAaxzQfjEf;Landslide;acoustic;Guus Dielissen, Andrew Gialanella;Landslide;29;199222;FALSO
+0OHHcoyrWnkVukc911UeZd;Acoustic;acoustic;Sonido de Agua en Bambu;Agua;15;129250;FALSO
+64zEnxASl3epPAIH4MsmSw;Acoustic Energy Vibrations;acoustic;Healing Solfeggio Frequencies, Harmony Touch;528: Mind & Body Healing;45;118331;FALSO
