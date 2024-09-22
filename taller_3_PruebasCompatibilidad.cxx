@@ -110,11 +110,14 @@ int main( int argc, char* argv[] )
   // TODO #18: Generar el recorrido en inorden de los arboles a través de una funcion de cada arbol
   miArbolAVL.inordenEnLista( inordenAVL );
   miArbolRN.inordenEnLista( inordenRN );
+  // miMonticulo.inordenEnLista( inordenHeap );
+
   if (!inordenRN.empty())
     std::cout<<"elementos del RN = "<<inordenRN.size()<<std::endl;
   if (!inordenAVL.empty())
     std::cout<<"elementos del AVL = "<<inordenRN.size()<<std::endl;
-  // miMonticulo.inordenEnLista( inordenHeap );
+  //Monticulo
+  
   //Hacer al final
   if( inordenAVL.size( ) != inordenRN.size( ))
   {
@@ -127,6 +130,8 @@ int main( int argc, char* argv[] )
   // TODO #19: Comparar que los tres recorridos inorden tengan los mismos datos en las mismas posiciones (O(N))
   TList::iterator itAVL;
   TList::iterator itRN;
+  //Monticulo
+
   for (itAVL = inordenAVL.begin(), itRN = inordenRN.begin(); itAVL != inordenAVL.end(); itAVL++, itRN ++){
     Song cancionAVL = *itAVL;
     Song cancionRN = *itRN;
@@ -135,6 +140,7 @@ int main( int argc, char* argv[] )
       std::cout<<"DIFERECIA"<<std::endl;
       std::cout<<"AVL = "<<cancionAVL.obtenerId()<<std::endl;
       std::cout<<"RN  =  "<<cancionRN.obtenerId()<<std::endl;
+      //Monticulo
       std::cout<<"------------------------------------"<<std::endl;
     }
     if (cancionAVL.obtenerId() == cancionRN.obtenerId()){
@@ -142,6 +148,7 @@ int main( int argc, char* argv[] )
       std::cout<<"IGUALES"<<std::endl;
       std::cout<<"AVL = "<<cancionAVL.obtenerId()<<std::endl;
       std::cout<<"RN  =  "<<cancionRN.obtenerId()<<std::endl;
+      //Monticulo
       std::cout<<"------------------------------------"<<std::endl;
     }
   }
@@ -236,9 +243,17 @@ int main( int argc, char* argv[] )
   //Despues de eliminar deben ser iguales
   inordenAVL.clear();
   inordenRN.clear();
+  //Monticulo
+
   miArbolAVL.inordenEnLista( inordenAVL );
-  miArbolAVL.inOrden();
   miArbolRN.inordenEnLista( inordenRN );
+  //Monticulo
+
+  if (!inordenRN.empty())
+    std::cout<<"elementos del RN = "<<inordenRN.size()<<std::endl;
+  if (!inordenAVL.empty())
+    std::cout<<"elementos del AVL = "<<inordenRN.size()<<std::endl;
+  //Monticulo
 
   TList::iterator itAVLelim;
   TList::iterator itRNelim;
@@ -250,6 +265,7 @@ int main( int argc, char* argv[] )
       std::cout<<"DIFERECIA"<<std::endl;
       std::cout<<"AVL = "<<cancionAVL.obtenerId()<<std::endl;
       std::cout<<"RN  =  "<<cancionRN.obtenerId()<<std::endl;
+      //Monticulo
       std::cout<<"------------------------------------"<<std::endl;
     }
     if (cancionAVL.obtenerId() == cancionRN.obtenerId()){
@@ -257,6 +273,7 @@ int main( int argc, char* argv[] )
       std::cout<<"IGUALES"<<std::endl;
       std::cout<<"AVL = "<<cancionAVL.obtenerId()<<std::endl;
       std::cout<<"RN  =  "<<cancionRN.obtenerId()<<std::endl;
+      //Monticulo
       std::cout<<"------------------------------------"<<std::endl;
     }
   }
