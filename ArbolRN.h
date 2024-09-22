@@ -6,17 +6,17 @@
 
 template <typename T>
 class ArbolRN {
-private:
+protected:
     std::set<T> set;  // El set esta encapsulado
 public:
-    // Buscar un valor en el set
-    T search(const T& val);  // Devuelve el valor en lugar del iterador
+    bool insert(const T& val);
+
+    bool search(const T& val);
 
     bool remove(const T& val);
 
-    // Obtener los elementos del set en orden inorden usando una lista
-    std::list<T> inordenEnLista() const;
-}
+    void inordenEnLista(std::list<T>& resultado) const;
+};
 
 #include "ArbolRN.hxx"
 
