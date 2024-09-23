@@ -13,7 +13,7 @@
 // TODO #8: incluir cabecera arbol RN a utilizar
 #include "ArbolRN.h"
 // TODO #9: incluir cabecera monticulo
-// #include "monticulo.h"
+ #include "Monticulo.h"
 
 // -------------------------------------------------------------------------
 typedef std::list< Song > TList;
@@ -23,7 +23,7 @@ typedef ArbolAVL< Song > TAVL;
 // TODO #11: definir nombre alternativo para arbol RN de tipo Song
 typedef ArbolRN < Song >  TSet;
 // TODO #12: definir nombre alternativo para monticulo de tipo Song
-// typedef monticulo< Song > THeap;
+ typedef Monticulo< Song > THeap;
 
 // -------------------------------------------------------------------------
 template< class TArbol >
@@ -51,7 +51,7 @@ int main( int argc, char* argv[] )
   // TODO #14: Declarar arbol RN a utilizar
   TSet miArbolRN;
   // TODO #15: Declarar monticulo a utilizar
-  // THeap miMonticulo;
+   THeap miMonticulo;
 
   // Llenar arbol rojinegro y calcular el tiempo empleado
   std::clock_t inicioLecturaRN = std::clock( );
@@ -86,7 +86,7 @@ int main( int argc, char* argv[] )
     << std::endl;
 
 
-/**** QUITAR CUANDO ESTE MONTICULO
+ //QUITAR CUANDO ESTE MONTICULO
   // Llenar monticulo y calcular el tiempo empleado
   std::clock_t inicioLecturaHeap = std::clock( );
   bool lecturaHeap = addData( miMonticulo, argv[ 1 ] );
@@ -102,7 +102,8 @@ int main( int argc, char* argv[] )
       << "Error al leer \"" << argv[ 1 ]
       << "\" para llenar el monticulo."
       << std::endl;
-****/
+// ----
+
   // Obtener el recorrido en inorden de los arboles
   TList inordenAVL;
   TList inordenRN;
@@ -110,13 +111,15 @@ int main( int argc, char* argv[] )
   // TODO #18: Generar el recorrido en inorden de los arboles a través de una funcion de cada arbol
   miArbolAVL.inordenEnLista( inordenAVL );
   miArbolRN.inordenEnLista( inordenRN );
-  // miMonticulo.inordenEnLista( inordenHeap );
+  miMonticulo.inordenEnLista( inordenHeap );
 
   if (!inordenRN.empty())
     std::cout<<"elementos del RN = "<<inordenRN.size()<<std::endl;
   if (!inordenAVL.empty())
     std::cout<<"elementos del AVL = "<<inordenRN.size()<<std::endl;
   //Monticulo
+  if (!inordenHeap.empty())
+    std::cout<<"elementos del AVL = "<<inordenHeap.size()<<std::endl;
   
   //Hacer al final
   if( inordenAVL.size( ) != inordenRN.size( ))
@@ -131,25 +134,28 @@ int main( int argc, char* argv[] )
   TList::iterator itAVL;
   TList::iterator itRN;
   //Monticulo
+  TList::iterator itHeap;
 
-  for (itAVL = inordenAVL.begin(), itRN = inordenRN.begin(); itAVL != inordenAVL.end(); itAVL++, itRN ++){
+  for (itAVL = inordenAVL.begin(), itRN = inordenRN.begin(), itHeap = inordenHeap.begin(); itAVL != inordenAVL.end(); itAVL++, itRN ++, itHeap++){
     Song cancionAVL = *itAVL;
     Song cancionRN = *itRN;
+    Song cancionHeap = *itHeap;
+
     if (cancionAVL.obtenerId() != cancionRN.obtenerId()){
       std::cout<<"------------------------------------"<<std::endl;
       std::cout<<"DIFERECIA"<<std::endl;
       std::cout<<"AVL = "<<cancionAVL.obtenerId()<<std::endl;
       std::cout<<"RN  =  "<<cancionRN.obtenerId()<<std::endl;
       //Monticulo
-      std::cout<<"------------------------------------"<<std::endl;
+      std::cout<<"Heap  =  "<<cancionHeap.obtenerId()<<std::endl;
     }
-    if (cancionAVL.obtenerId() == cancionRN.obtenerId()){
+    if (cancionAVL.obtenerId() == cancionRN.obtenerId() && cancionAVL.obtenerId() == cancionHeap.obtenerId() && cancionRN.obtenerId() == cancionHeap.obtenerId()){
       std::cout<<"------------------------------------"<<std::endl;
       std::cout<<"IGUALES"<<std::endl;
       std::cout<<"AVL = "<<cancionAVL.obtenerId()<<std::endl;
       std::cout<<"RN  =  "<<cancionRN.obtenerId()<<std::endl;
       //Monticulo
-      std::cout<<"------------------------------------"<<std::endl;
+      std::cout<<"Heap  =  "<<cancionHeap.obtenerId()<<std::endl;
     }
   }
   /* BUSQUEDA DE DATOS */
@@ -187,7 +193,7 @@ int main( int argc, char* argv[] )
     << "\" para busqueda el arbol AVL."
     << std::endl;
 
-/**** QUITAR CUANDO ESTE MONTICULO
+ //QUITAR CUANDO ESTE MONTICULO
   // busqueda en monticulo y calcular el tiempo empleado
   std::clock_t inicioBusquedaHeap = std::clock( );
   bool BusquedaHeap = searchData( miMonticulo, argv[ 2 ] );
@@ -203,7 +209,8 @@ int main( int argc, char* argv[] )
       << "Error al leer \"" << argv[ 2 ]
       << "\" para busqueda el monticulo."
       << std::endl;
-****/
+      //----
+
 
   /* ELIMINACION DE DATOS */
 
@@ -240,45 +247,8 @@ int main( int argc, char* argv[] )
     << "\" para eliminacion el arbol AVL."
     << std::endl;
   
-  //Despues de eliminar deben ser iguales
-  inordenAVL.clear();
-  inordenRN.clear();
-  //Monticulo
 
-  miArbolAVL.inordenEnLista( inordenAVL );
-  miArbolRN.inordenEnLista( inordenRN );
-  //Monticulo
-
-  if (!inordenRN.empty())
-    std::cout<<"elementos del RN = "<<inordenRN.size()<<std::endl;
-  if (!inordenAVL.empty())
-    std::cout<<"elementos del AVL = "<<inordenRN.size()<<std::endl;
-  //Monticulo
-
-  TList::iterator itAVLelim;
-  TList::iterator itRNelim;
-  for (itAVLelim = inordenAVL.begin(), itRNelim = inordenRN.begin(); itAVLelim != inordenAVL.end(); itAVLelim++, itRNelim ++){
-    Song cancionAVL = *itAVLelim;
-    Song cancionRN = *itRNelim;
-    if (cancionAVL.obtenerId() != cancionRN.obtenerId()){
-      std::cout<<"------------------------------------"<<std::endl;
-      std::cout<<"DIFERECIA"<<std::endl;
-      std::cout<<"AVL = "<<cancionAVL.obtenerId()<<std::endl;
-      std::cout<<"RN  =  "<<cancionRN.obtenerId()<<std::endl;
-      //Monticulo
-      std::cout<<"------------------------------------"<<std::endl;
-    }
-    if (cancionAVL.obtenerId() == cancionRN.obtenerId()){
-      std::cout<<"------------------------------------"<<std::endl;
-      std::cout<<"IGUALES"<<std::endl;
-      std::cout<<"AVL = "<<cancionAVL.obtenerId()<<std::endl;
-      std::cout<<"RN  =  "<<cancionRN.obtenerId()<<std::endl;
-      //Monticulo
-      std::cout<<"------------------------------------"<<std::endl;
-    }
-  }
-
-/**** QUITAR CUANDO ESTE MONTICULO
+//QUITAR CUANDO ESTE MONTICULO
   // eliminacion en monticulo y calcular el tiempo empleado
   std::clock_t inicioeliminacionHeap = std::clock( );
   bool eliminacionHeap = deleteData( miMonticulo, argv[ 2 ] );
@@ -294,10 +264,60 @@ int main( int argc, char* argv[] )
       << "Error al leer \"" << argv[ 2 ]
       << "\" para eliminacion el monticulo."
       << std::endl;
-****/
+//----
+
+
+
+  miArbolAVL.inordenEnLista( inordenAVL );
+  miArbolRN.inordenEnLista( inordenRN );
+  //Monticulo
+  miMonticulo.inordenEnLista( inordenHeap );
+
+  //Despues de eliminar deben ser iguales
+  inordenAVL.clear();
+  inordenRN.clear();
+  //Monticulo
+  inordenHeap.clear();
+
+  if (!inordenRN.empty())
+    std::cout<<"elementos del RN = "<<inordenRN.size()<<std::endl;
+  if (!inordenAVL.empty())
+    std::cout<<"elementos del AVL = "<<inordenRN.size()<<std::endl;
+  //Monticulo
+  if (!inordenHeap.empty())
+    std::cout<<"elementos del AVL = "<<inordenHeap.size()<<std::endl;
+
+  TList::iterator itAVLelim;
+  TList::iterator itRNelim;
+  TList::iterator itHeapelim;
+
+  for (itAVLelim = inordenAVL.begin(), itRNelim = inordenRN.begin(), itHeapelim = inordenRN.begin(); itAVLelim != inordenAVL.end(); itAVLelim++, itRNelim ++, itHeapelim++){
+    Song cancionAVL = *itAVLelim;
+    Song cancionRN = *itRNelim;
+    Song cancionHeap = *itHeapelim;
+    if (cancionAVL.obtenerId() != cancionRN.obtenerId()){
+      std::cout<<"------------------------------------"<<std::endl;
+      std::cout<<"DIFERECIA"<<std::endl;
+      std::cout<<"AVL = "<<cancionAVL.obtenerId()<<std::endl;
+      std::cout<<"RN  =  "<<cancionRN.obtenerId()<<std::endl;
+      //Monticulo
+      std::cout<<"Heap  =  "<<cancionHeap.obtenerId()<<std::endl;
+    }
+    if (cancionAVL.obtenerId() == cancionRN.obtenerId()){
+      std::cout<<"------------------------------------"<<std::endl;
+      std::cout<<"IGUALES"<<std::endl;
+      std::cout<<"AVL = "<<cancionAVL.obtenerId()<<std::endl;
+      std::cout<<"RN  =  "<<cancionRN.obtenerId()<<std::endl;
+      //Monticulo
+      std::cout<<"Heap  =  "<<cancionHeap.obtenerId()<<std::endl;
+    }
+  }
 
   return( 0 );
 }
+ 
+
+
 
 // -------------------------------------------------------------------------
 template< class TArbol >
