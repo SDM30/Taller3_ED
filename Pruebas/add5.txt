@@ -1,6 +1,0 @@
-id;name;genre;artists;album;popularity;duration_ms;explicit
-7kr3xZk4yb3YSZ4VFtg2Qt;Acoustic;acoustic;Billy Raffoul;1975;58;172199;FALSO
-1kJygfS4eoVziBBI93MSYp;Acoustic;acoustic;Billy Raffoul;A Few More Hours at YYZ;57;172202;FALSO
-6lynns69p4zTCRxmmiSY1x;Here Comes the Sun - Acoustic;acoustic;Molly Hocking, Bailey Rushlow;Here Comes the Sun (Acoustic);42;144786;FALSO
-1RC9slv335IfLce5vt9KTW;Acoustic #3;acoustic;The Goo Goo Dolls;Dizzy up the Girl;46;116573;FALSO
-5o9L8xBuILoVjLECSBi7Vo;My Love Mine All Mine - Acoustic Instrumental;acoustic;Guus Dielissen, Casper Esmann;My Love Mine All Mine (Acoustic Instrumental);33;133922;FALSO

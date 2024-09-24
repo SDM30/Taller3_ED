@@ -1,0 +1,101 @@
+id;name;genre;artists;album;popularity;duration_ms;explicit
+7kr3xZk4yb3YSZ4VFtg2Qt;Acoustic;acoustic;Billy Raffoul;1975;58;172199;FALSO
+1kJygfS4eoVziBBI93MSYp;Acoustic;acoustic;Billy Raffoul;A Few More Hours at YYZ;57;172202;FALSO
+6lynns69p4zTCRxmmiSY1x;Here Comes the Sun - Acoustic;acoustic;Molly Hocking, Bailey Rushlow;Here Comes the Sun (Acoustic);42;144786;FALSO
+1RC9slv335IfLce5vt9KTW;Acoustic #3;acoustic;The Goo Goo Dolls;Dizzy up the Girl;46;116573;FALSO
+5o9L8xBuILoVjLECSBi7Vo;My Love Mine All Mine - Acoustic Instrumental;acoustic;Guus Dielissen, Casper Esmann;My Love Mine All Mine (Acoustic Instrumental);33;133922;FALSO
+742ZnC1OgUGIScdzXEy5ui;Acoustic;acoustic;Ling tosite sigure;#4;14;238146;FALSO
+3vpJdk93GzerZnlou6Ua0z;Beautiful Things - Acoustic;acoustic;Benson Boone;Daydream;0;201248;FALSO
+42qGA2116mkpSAaxzQfjEf;Landslide;acoustic;Guus Dielissen, Andrew Gialanella;Landslide;29;199222;FALSO
+0OHHcoyrWnkVukc911UeZd;Acoustic;acoustic;Sonido de Agua en Bambu;Agua;15;129250;FALSO
+64zEnxASl3epPAIH4MsmSw;Acoustic Energy Vibrations;acoustic;Healing Solfeggio Frequencies, Harmony Touch;528: Mind & Body Healing;45;118331;FALSO
+1okbqCnEzl9GUddnjNkb19;Little Lies;acoustic;Roses & Frey;Little Lies;39;197851;FALSO
+5Ix5RkjIO1r3gL0NH2KpqK;Acoustic;acoustic;The Re-Stoned;Plasma;8;356870;FALSO
+0i49QlMEbbbax1gZe2qQzm;Too Good At Goodbyes - Acoustic;acoustic;Sam Smith;Hear The Pride;0;220095;FALSO
+5hzQ0nwJMFTXbNZmjioxJ1;The One (Acoustic Cover);acoustic;The Moon Loungers;The One (Acoustic Cover);25;241115;FALSO
+0vZAmULYfcNCsB5B2fNEvK;Acoustic;acoustic;Lesfm, Olexy;Acoustic;5;156654;FALSO
+7F1CiKqrY44kh5cDqwHOnx;Love Is Gone - Acoustic;acoustic;SLANDER, Dylan Matthew;Love Is Gone (Acoustic);71;176971;FALSO
+1RnvWJ0pW0yhk25gQVWb3M;What If - Acoustic Sessions;acoustic;Cody Fry;Acoustic Sessions - Live From Nashville;25;245933;FALSO
+76QqtzlnTzVTEWhBRnDinW;Acoustic;acoustic;Mortal Treason;A Call To The Martyrs;3;213693;FALSO
+72794Eag03xdy7TO0KNuid;Cayendo (Side A - Acoustic);acoustic;Frank Ocean;Cayendo (Side A - Acoustic);63;202200;FALSO
+1Mt7cf3bZnH6UmlMrBqrVN;One (Acoustic Cover);acoustic;Girl in the Distance;One (Acoustic Cover);27;237742;FALSO
+2RopJOhPaH9DikFrS0m7XJ;Acoustic;acoustic;Billy Raffoul;Feel good vibes 2020;16;172199;FALSO
+5y788ya4NvwhBznoDIcXwK;The Sound of Silence - Acoustic Version;acoustic;Simon & Garfunkel;Wednesday Morning, 3 A.M.;71;185413;FALSO
+1YeJ3IF2Q3JCPtkZQQrM9Q;She Will Be Loved - Acoustic;acoustic;Jonah Baker;She Will Be Loved (Acoustic);31;226698;FALSO
+1QdtQPEokExDmlxw1AKOf1;Acoustic;acoustic;Puppe Music;Tranquil Moods;10;62928;FALSO
+0ElpbbncWT9aS7mgoqEHbQ;Where's My Love - Acoustic;acoustic;SYML;Where's My Love;68;239880;FALSO
+0JBcTq9AY5ti8MkwDzEjyq;Waiting for the Storm;acoustic;Acoustic Levitation;Something;13;199000;FALSO
+29eMplBkGSox4550xCKsK0;Acoustic;acoustic;Trainman;Lofi beats for Nyx mains to cry to;1;165564;FALSO
+7fY5bvnh1EDqF2SS4JnOKS;QUIET - Acoustic;acoustic;Hillside Recording, Diana Trout;QUIET;61;191666;FALSO
+0SjoUXTT8ulcAEKEK2twat;Good Vibes;acoustic;Acoustics, Tyler Swatie;Good Vibes;13;192000;FALSO
+0vn3gDJerc9a4EsLIkzFWb;Acoustic;acoustic;Kondor;Peace of Mind;1;168575;FALSO
+41DZa1qUamVuPPr7qrtbKw;Whatcha Say - Acoustic;acoustic;Jason Derulo;Heartbreaking Pop;0;222520;FALSO
+7BEoayfBrFhmiGsHRi8XVw;Stillness, Pt 1: Moonshine;acoustic;Acoustic Quarter;Summer Rain;24;147333;FALSO
+7ygizeOO5dpeEsyAmYytNW;Acoustic;acoustic;Helios Jazz Club;Magical Love;1;267311;FALSO
+6Ea2uAyHX6Q8DnGKrMKHLq;Inertia - Acoustic;acoustic;AJR;Inertia (Acoustic);58;230990;VERDADERO
+1XneLLl94UIN5bLqBxihjv;Waiting for the Dawn;acoustic;Acoustic Levitation;Mysteriousness;17;221333;FALSO
+0MQixY91NyA384ZyAmUzGF;Acoustic;acoustic;Billy Raffoul;Dinner With Friends;3;172199;FALSO
+4qsRrKXNKBxZjKWHBrRdXs;Acoustic Levitation;acoustic;Devin The Dude;Acoustic Levitation;29;355961;VERDADERO
+35gFVyd6BvCmjpyuueMRkQ;We Built This City - Acoustic;acoustic;Ben Weighill;We Built This City (Acoustic);25;161777;FALSO
+5SCvmjq2tWZRxoQJ1DGLpK;Acoustic;acoustic;David AI;Just Kidding;0;234700;FALSO
+5YABYtKx9qa56vBjlXDbmw;Snooze (Acoustic) (feat. Justin Bieber);acoustic;SZA, Justin Bieber;Snooze (Acoustic) (feat. Justin Bieber);65;190464;VERDADERO
+3l4bwhzSFGV2WSE475EOnh;All the Small Things - Acoustic;acoustic;Jay Filson;All the Small Things (Acoustic);18;166917;FALSO
+0xIDR5U9WwBb3hbqAyS3R9;Acoustic;acoustic;U Know & The Drill;Acoustic;2;109354;FALSO
+62ljuuXo0zrcrtJnnOhfxT;Dear April (Side A - Acoustic);acoustic;Frank Ocean;Dear April (Side A - Acoustic);57;231040;FALSO
+4TOYSDT4aaSoQKbxshBYbI;The Way You Make Me Feel - Acoustic;acoustic;Matt Johnson, John Adams;The Way You Make Me Feel (Acoustic);30;157037;FALSO
+0r5j1OxaqLkhxJOgA0kstj;Acoustic;acoustic;XtraVert;Acoustic;0;153012;VERDADERO
+4l06WS1mNsV6atdeY9y54L;Never Comin' Home - Live Acoustic;acoustic;Bailey Zimmerman;swipe left;0;198958;FALSO
+5lT24KdYcJXIEmQGi6DsGy;Remember - Acoustic;acoustic;Thomas Daniel;Remember (Acoustic);25;171710;FALSO
+24nJAVWOZGmoQVGhaZPqBT;Acoustic;acoustic;Mark S.D.Ray;Neo Soul Guitar: Pop Music Soul Guitar, Instrumental Guitar Solo;0;188750;FALSO
+6QPqf4WqwZkxM68bGipzvP;Young Blood - Acoustic;acoustic;Noah Kahan;Young Blood (Acoustic);56;200613;FALSO
+0TKCxM7SDITtm6joUNUU9x;Bubbly;acoustic;Acoustic Guitar Collective;Bubbly;14;159389;FALSO
+6JZcfM5vr5O0KeGIAWiydu;Afrobeat 2023 Mixtape;afrobeat;Dj funkybee;Afrobeat 2023 Mixtape;28;3601658;VERDADERO
+0S5qvbTPpWNXjnV8Uf4VZo;Afrobeat Heatwave;afrobeat;Lofi Afrobeats, Dj Discoteca, AfrooBeatZ, Dj AfroBeats, Afro Beat Music;Exotic Afro Discoteca - Jungle Boogie Fiesta;2;264626;FALSO
+2kaH2Z8ezDUKf6fNw250rZ;UNAVAILABLE (feat. Musa Keys);afrobeat;Davido, Musa Keys;Timeless;68;169911;VERDADERO
+7EWRaOt6aJsuRfTwd2kmeQ;Afrobeat;afrobeat;Gbenga;Let's Give Thanks;21;322856;FALSO
+6DdtXGnIE31tW37mLzy7WY;AfroBeat Chaka Chaka;afrobeat;Giuliano Nicolis;AfroBeat Chaka Chaka;30;180652;FALSO
+5ZtK8XAVnoaGdBXZWCEVCY;Lonely At The Top;afrobeat;Asake;Work Of Art;69;157714;FALSO
+6idDCtkAr9EdGEr5yHyp09;Afrobeat;afrobeat;FASSounds;Summer Tunes vol. 1;8;110400;FALSO
+16y5C7L7vgDUSNCyObG75L;Afrobeat Ki Masti;afrobeat;Karl Lion;Afrobeat Ki Masti;25;205090;FALSO
+3IQT2MM49GkXfHF9eemaw5;Soweto;afrobeat;Victony, Tempoe;Outlaw;69;148000;VERDADERO
+2cSC2pA05BPYJNMgU95okZ;Afrobeat;afrobeat;Jujuba;Jujuba;3;453493;FALSO
+2WRQhgXftM1G0NIXr7jNmc;Afrobeats Mix Flight OSO 149;afrobeat;Osocity;Afrobeats Mix Flight OSO 149;26;2372414;VERDADERO
+0zVk3uuV9UhxAt48F3OL12;Holy Ghost;afrobeat;Omah Lay;Holy Ghost;68;186153;FALSO
+1rPUoNyCXVF2FOFHN0ceh3;Afrobeat;afrobeat;Entspannungsmusik Meer;Einfach entspannen, Vol. 2;4;176519;FALSO
+1iBWjQ9af9NnUd5xnQDB3k;Charm;afrobeat;Rema;Rave & Roses Ultra;65;204750;VERDADERO
+7F8XEYR37oFDM826xheWyE;Afrobeat;afrobeat;Bür Gür;Have You Lost Your Faith In God;0;317250;FALSO
+2fjC5oRlCcPDvKxDjstUbt;Afrobeat Renaissance - Alternate Drum Mix;afrobeat;Robert Glasper, Derrick Hodge;Run The World: Season 1 (Music from the STARZ Original Series);20;53671;FALSO
+46gfN72BxmLvACx6Pve4XU;Dull;afrobeat;Asake;Mr. Money With The Vibe;62;100173;FALSO
+5VE0wgk2gybTequLg1m4Zs;Afrobeat;afrobeat;AfroBeats;Afrobeat;1;214368;FALSO
+5WTRTxIyiSrCtKYK8eLerN;Afrobeats 2023;afrobeat;Paul CleverLee;Afrobeats 2023;32;224501;VERDADERO
+1DA2ADZs6O28y2rmdmpekw;2 Sugar (feat. Ayra Starr);afrobeat;Wizkid, Ayra Starr;More Love, Less Ego;57;187906;FALSO
+1aKDHWEZ8djoq99TSE1In2;Afrobeat;afrobeat;Negus Beauvoir;Afrobeat;0;189120;FALSO
+0XzY9p6zweueIjyNICwsgy;Afrobeat - Baile do Japão;afrobeat;MC Neneco, DJ Netto, MC Chara, MC GIBI;Afrobeat - Baile do Japão;0;160208;FALSO
+4cpxSBb2TRx8WJhQM1Jdpk;Stubborn (with Asake);afrobeat;Victony, Asake;Stubborn (with Asake);67;176333;FALSO
+5E1bwFQDYXIHUhBqUXJXZb;Afrobeat;afrobeat;Royalty Free Music Background;Afrobeat;0;124799;FALSO
+0nWP3geWfIWT2U1F8TEa4V;Afrobeat Fiesta;afrobeat;Lofi Afrobeats, Dj Discoteca, AfroBeatsZ;Afro Beach Party - Chill Out Music for Afro Party & Discoteca;17;198430;FALSO
+4E8EciYYzTKF4REO51XQiS;DND;afrobeat;Rema;RAVAGE;56;166000;FALSO
+0SFu2Ngw6OC9SR8dxYUBgd;Afrobeat;afrobeat;African Tribal Orchestra;Sounds Like Africa (African Beats, Drums, Sounds and Music);3;176519;FALSO
+2jzZgXpQqA8T9KhdFjdBgA;Afrobeat Si Fueras Tu - Instrumental;afrobeat;Jordan Films RD;Instruméntal Jordan Films;20;188003;FALSO
+0x3sDnom0itB72oEVrRE7v;Ololufe (feat. Wande Coal);afrobeat;Wizkid, Wande Coal;S2;55;210194;FALSO
+4EGWRcWnB3uFjebmmscNzg;Afrobeat;afrobeat;Oneness Of Juju;African Rhythms;1;237260;FALSO
+6WavyUNdnJk9SRW7ko9ack;Reason (feat. Russ);afrobeat;Asake, Russ;Mr. Money With The Vibe;53;131764;FALSO
+6lH52tnoBYPivmIQKGXTgl;Afrobeat;afrobeat;Ruankkj;Afrobeat;11;144172;VERDADERO
+7xF6SSfTW1smhbyAlJ6ecd;Afrobeat - Radio Mix;afrobeat;Simon Le Grec;Afrobeat;0;229403;FALSO
+0Q1bMs3xLQiDEeaneehdxv;Remember;afrobeat;Asake;Work Of Art;63;182142;FALSO
+71JDBR0qGP77kVSiYTDMlX;Afrobeat;afrobeat;DJ Pasta, Brucaliff;Dancefloor Jams;2;292866;FALSO
+6Fw7kOKInk90eGVrn5ll9t;Afrobeat - Club Mix;afrobeat;Simon Le Grec;Afrobeat;0;363227;FALSO
+2Iv3GHM3xFKIPbYSnhJAXO;Okay;afrobeat;Adekunle Gold;Afro Pop, Vol. 1;54;186299;VERDADERO
+0dGjhqDVHM3EynOae561ZC;AfroBeat;afrobeat;Marlon Dasoul;Mozart at the Club;0;175229;FALSO
+3vgHcLsJHvQclAhdcGtNFe;Afrobeat - Playlist Mix;afrobeat;Simon Le Grec;Afrobeat;0;169835;FALSO
+3YPtN5X0HxIzeRCHxfoXTy;Mogbe;afrobeat;Asake;Work Of Art;57;178947;FALSO
+6ZZ4zoPdivz4JOUjkqpRNp;Afrobeat;afrobeat;Diomobeats;Afrobeat;0;194867;FALSO
+4EPK9EsXU63lnRPbZwH1LV;Afrobeat - Dub Mix;afrobeat;Simon Le Grec;Afrobeat;0;365853;FALSO
+5V9XFfvCG4WP5ZdISOLvaF;Sability;afrobeat;Ayra Starr;Sability;57;166558;FALSO
+0pLp0NaGBIh2N2tew3FVyN;Afrobeat;afrobeat;African Tribal Orchestra;Highlights of African Tribal Orchestra;0;176519;FALSO
+5WwQgwivZOfjHHOdZXnDjR;Feel (Afrobeats Mix);afrobeat;Dualbox, Aracy Carvalho;Feel (Afrobeats Mix);38;147878;FALSO
+3ceZIRUX8m8qFFcnEDkj2K;Holiday;afrobeat;Rema;Rave & Roses Ultra;52;159100;FALSO
+0SC8vPETc4K5bE8kuATCli;Afrobeat;afrobeat;Luigi Vitale, Gianpaolo Rinaldi, Luca Colussi, Daniele D'Agaro, Mirko Cisilino, Denis Biason;KALIMBATA;0;448464;FALSO
+5CwdYVhbdeG3wycY3ukvM4;For My Love - Afrobeats Mix;afrobeat;Don & Gene;For My Love (Afrobeats Mix);39;132458;FALSO
+6R3zZakACTkEkqlQKmnnOB;Good Vibes Infinitititi - African Lofi;afrobeat;Lofi Afrobeats;Good Vibes Infinitititi - African Lofi;47;144000;FALSO
+0qmQoGGBl8kH9YDfBJIWmQ;Afrobeat;afrobeat;Dani Le Cross;4 DJ: UnDiscovered Weekly #17;0;300000;FALSO

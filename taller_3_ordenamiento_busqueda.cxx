@@ -11,10 +11,9 @@
 // TODO #7: incluir cabecera arbol AVL
 #include "ArbolAVL.h"
 // TODO #8: incluir cabecera arbol RN a utilizar
-// #include <set>
-// #include <map>
+#include "ArbolRN.h"
 // TODO #9: incluir cabecera monticulo
-// #include "monticulo.h"
+#include "Monticulo.h"
 
 // -------------------------------------------------------------------------
 typedef std::list< Song > TList;
@@ -22,10 +21,9 @@ typedef std::list< Song > TList;
 // TODO #10: definir nombre alternativo para arbol AVL de tipo Song
 typedef ArbolAVL< Song > TAVL;
 // TODO #11: definir nombre alternativo para arbol RN de tipo Song
-// typedef std::set< Song >  TSet;
-// typedef std::map< std::string, Song >  TMap;
+typedef ArbolRN < Song >  TSet;
 // TODO #12: definir nombre alternativo para monticulo de tipo Song
-// typedef monticulo< Song > THeap;
+typedef Monticulo< Song > THeap;
 
 // -------------------------------------------------------------------------
 template< class TArbol >
@@ -51,12 +49,12 @@ int main( int argc, char* argv[] )
   // TODO #13: Declarar arbol AVL a utilizar
   TAVL miArbolAVL;
   // TODO #14: Declarar arbol RN a utilizar
-  // TSet miArbolRN;
+  TSet miArbolRN;
   // TMap miArbolRN;
   // TODO #15: Declarar monticulo a utilizar
-  // THeap miMonticulo;
+  THeap miMonticulo;
 
-/**** QUITAR CUANDO ESTE ROJO Y NEGRO
+
   // Llenar arbol rojinegro y calcular el tiempo empleado
   std::clock_t inicioLecturaRN = std::clock( );
   bool lecturaRN = addData( miArbolRN, argv[ 1 ] );
@@ -72,8 +70,7 @@ int main( int argc, char* argv[] )
       << "Error al leer \"" << argv[ 1 ]
       << "\" para llenar el arbol RN."
       << std::endl;
-  
-****/
+
   // Llenar arbol AVL y calcular el tiempo empleado
   std::clock_t inicioLecturaAVL = std::clock( );
   bool lecturaAVL = addData( miArbolAVL, argv[ 1 ] );
@@ -89,7 +86,7 @@ int main( int argc, char* argv[] )
     << "Error al leer \"" << argv[ 1 ]
     << "\" para llenar el arbol AVL."
     << std::endl;
-/**** QUITAR CUANDO ESTE MONTICULO
+
   // Llenar monticulo y calcular el tiempo empleado
   std::clock_t inicioLecturaHeap = std::clock( );
   bool lecturaHeap = addData( miMonticulo, argv[ 1 ] );
@@ -105,18 +102,16 @@ int main( int argc, char* argv[] )
       << "Error al leer \"" << argv[ 1 ]
       << "\" para llenar el monticulo."
       << std::endl;
-****/
+
   // Obtener el recorrido en inorden de los arboles
   TList inordenAVL;
   TList inordenRN;
   TList inordenHeap;
   // TODO #18: Generar el recorrido en inorden de los arboles a través de una funcion de cada arbol
   miArbolAVL.inordenEnLista( inordenAVL );
-  miArbolAVL.inOrden(); //PRUEBA
-  std::cout<<"Tamaño del árbol antes de eliminar = "<< miArbolAVL.tamano() <<std::endl; //PRUEBA
-  // miArbolRN.inordenEnLista( inordenRN );
-  // miMonticulo.inordenEnLista( inordenHeap );
-  //Hacer al final
+  miArbolRN.inordenEnLista( inordenRN );
+  miMonticulo.inordenEnLista( inordenHeap );
+
   if( inordenAVL.size( ) != inordenRN.size( ) && inordenAVL.size( ) != inordenHeap.size( ) )
   {
     std::cout << "Cantidad de elementos en los arboles no coinciden." << std::endl;
@@ -126,13 +121,47 @@ int main( int argc, char* argv[] )
 
   // Comparar los arboles
   // TODO #19: Comparar que los tres recorridos inorden tengan los mismos datos en las mismas posiciones (O(N))
-  // RECOMENDACION: HACER DE ULTIMO
+  TList::iterator itAVL;
+  TList::iterator itRN;
+  TList::iterator itHeap;
+  bool diferentes = false;
+
+  for (itAVL = inordenAVL.begin(), itRN = inordenRN.begin(), itHeap = inordenHeap.begin();itAVL != inordenAVL.end(); itAVL++, itRN++, itHeap++) {
+    Song cancionAVL = *itAVL;
+    Song cancionRN = *itRN;
+    Song cancionHeap = *itHeap;
+
+    if (cancionAVL.obtenerId() != cancionHeap.obtenerId()) {
+        std::cout << "------------------------------------" << std::endl;
+        std::cout << "DIFERENCIA: el recorrido inOrden del arbol AVL no coincide con el monticulo" << std::endl;
+        std::cout << "AVL = " << cancionAVL.obtenerId() << std::endl;
+        std::cout << "RN  =  " << cancionRN.obtenerId() << std::endl;
+        std::cout << "Heap  =  " << cancionHeap.obtenerId() << std::endl;
+        
+        diferentes = true;
+    }
+
+    if (cancionAVL.obtenerId() != cancionRN.obtenerId()) {
+        std::cout << "------------------------------------" << std::endl;
+        std::cout << "DIFERENCIA: el recorrido inOrden del arbol AVL no coincide con el arbol RN" << std::endl;
+        std::cout << "AVL = " << cancionAVL.obtenerId() << std::endl;
+        std::cout << "RN  =  " << cancionRN.obtenerId() << std::endl;
+        std::cout << "Heap  =  " << cancionHeap.obtenerId() << std::endl;
+        
+        diferentes = true;
+    }
+  }
+
+  if (!diferentes) {
+    std::cout << "Todos los recorridos coinciden." << std::endl;
+  }
+  
+  
   /* BUSQUEDA DE DATOS */
 
-/**** QUITAR CUANDO ESTE ROJO Y NEGRO
   // busqueda en arbol rojinegro y calcular el tiempo empleado
   std::clock_t inicioBusquedaRN = std::clock( );
-  bool BusquedaRN = searchData( miArbolRN, argv[ 2 ] );
+  bool BusquedaRN = searchData( miArbolRN, argv[ 3 ] );
   std::clock_t finBusquedaRN = std::clock( );
   double tiempoBusquedaRN = ( finBusquedaRN - inicioBusquedaRN ) / double( CLOCKS_PER_SEC );
   if( BusquedaRN )
@@ -142,10 +171,9 @@ int main( int argc, char* argv[] )
       << std::endl;
   else
     std::cout
-      << "Error al leer \"" << argv[ 2 ]
+      << "Error al leer \"" << argv[ 3 ]
       << "\" para busqueda el arbol RN."
       << std::endl;
-****/
 
   // busqueda en arbol AVL y calcular el tiempo empleado
   std::clock_t inicioBusquedaAVL = std::clock( );
@@ -159,11 +187,10 @@ int main( int argc, char* argv[] )
     << std::endl;
   else
     std::cout
-    << "Error al leer \"" << argv[ 2 ]
+    << "Error al leer \"" << argv[ 3 ]
     << "\" para busqueda el arbol AVL."
     << std::endl;
 
-/**** QUITAR CUANDO ESTE MONTICULO
   // busqueda en monticulo y calcular el tiempo empleado
   std::clock_t inicioBusquedaHeap = std::clock( );
   bool BusquedaHeap = searchData( miMonticulo, argv[ 2 ] );
@@ -179,11 +206,11 @@ int main( int argc, char* argv[] )
       << "Error al leer \"" << argv[ 2 ]
       << "\" para busqueda el monticulo."
       << std::endl;
-****/
 
+  
   /* ELIMINACION DE DATOS */
 
-/**** QUITAR CUANDO ESTE ROJO Y NEGRO
+
   // eliminacion en arbol rojinegro y calcular el tiempo empleado
   std::clock_t inicioeliminacionRN = std::clock( );
   bool eliminacionRN = deleteData( miArbolRN, argv[ 2 ] );
@@ -199,8 +226,6 @@ int main( int argc, char* argv[] )
       << "Error al leer \"" << argv[ 2 ]
       << "\" para eliminacion el arbol RN."
       << std::endl;
-****/
-
 
   // eliminacion en arbol AVL y calcular el tiempo empleado
   std::clock_t inicioeliminacionAVL = std::clock( );
@@ -217,8 +242,7 @@ int main( int argc, char* argv[] )
     << "Error al leer \"" << argv[ 2 ]
     << "\" para eliminacion el arbol AVL."
     << std::endl;
-  std::cout<<"Tamaño del árbol despues de eliminar = "<< miArbolAVL.tamano() <<std::endl; //PRUEBA
-/**** QUITAR CUANDO ESTE MONTICULO
+
   // eliminacion en monticulo y calcular el tiempo empleado
   std::clock_t inicioeliminacionHeap = std::clock( );
   bool eliminacionHeap = deleteData( miMonticulo, argv[ 2 ] );
@@ -234,8 +258,7 @@ int main( int argc, char* argv[] )
       << "Error al leer \"" << argv[ 2 ]
       << "\" para eliminacion el monticulo."
       << std::endl;
-****/
-
+  
   return( 0 );
 }
 
@@ -278,15 +301,6 @@ bool addData( TArbol& arbol, const std::string& nomArch )
 
     Song valor(id, nombre, genero, artistas, album, popularidad, duracion_ms, expl);
 
-    // std::cout << "ID: " << valor.obtenerId() << std::endl;
-    //           << "Nombre: " << valor.obtenerNombre() << ", "
-    //           << "Género: " << valor.obtenerGenero() << ", "
-    //           << "Artistas: " << valor.obtenerArtistas() << ", "
-    //           << "Álbum: " << valor.obtenerAlbum() << ", "
-    //           << "Popularidad: " << valor.obtenerPopularidad() << ", "
-    //           << "Duración (ms): " << valor.obtenerDuracion() << ", "
-    //           << "Explícito: " << valor.obtenerExpl() << std::endl;
-
     // TODO #17: Implementar la función insert en cada uno de los arboles
     arbol.insert( valor );  // El arbol debe proveer el metodo "insert"
 
@@ -307,23 +321,16 @@ bool searchData( TArbol& arbol, const std::string& nomArch )
 
   if( !entrada )
     return( false );
-  //PRUEBA
-  std::cout<<std::endl<<"---------BUSQUEDA---------"<<std::endl;
   while( std::getline(entrada,linea) )
   {
     // TODO #20: Leer la linea del archivo y extraer el identificador a buscar
     std::string id = linea;
     Song valor;
     valor.fijarId(id);
-    //std::cout<<valor.obtenerId()<<std::endl;
     // TODO #21: Implementar la función search en cada uno de los arboles
-    //arbol.search( valor );  // El arbol debe proveer el metodo "search"
+    bool encontrado = arbol.search( valor );  // El arbol debe proveer el metodo "search"
     
-
-    //PRUEBA
-    if (arbol.search( valor )) {
-      std::cout<<valor.obtenerId()<<"= HA SIDO encontrado"<<std::endl;
-    } else {
+    if (!encontrado) {
       std::cout<<valor.obtenerId()<<"= NO FUE encontrado"<<std::endl;
     }
 
@@ -344,8 +351,6 @@ bool deleteData( TArbol& arbol, const std::string& nomArch )
 
   if( !entrada )
     return( false );
-  //PRUEBA
-  std::cout<<std::endl<<"---------ELIMINACION---------"<<std::endl;
   while( std::getline(entrada,linea) )
   {
     // TODO #22: Leer la linea del archivo y extraer el identificador a eliminar
@@ -353,18 +358,9 @@ bool deleteData( TArbol& arbol, const std::string& nomArch )
     Song valor;
     valor.fijarId(id);
     // TODO #23: Implementar la función delete en cada uno de los arboles
-    //arbol.remove( valor );  // El arbol debe proveer el metodo "delete"
-    if (arbol.remove( valor )) {
-      std::cout<<valor.obtenerId()<<"= HA SIDO eliminado"<<std::endl;
-    } else {
-      std::cout<<valor.obtenerId()<<"= NO FUE encontrado"<<std::endl;
-    }
+    arbol.remove( valor );  // El arbol debe proveer el metodo "delete"
   } // elihw
   entrada.close( );
-
-  std::cout<<std::endl<<"BUSQUEDA POST-ELIMINACION"<<std::endl;
-  searchData(arbol, nomArch);
-
   return( true );
 }
 
