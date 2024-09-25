@@ -22,7 +22,7 @@ bool ArbolRN<T>::remove(const T& val) {
 
 template <typename T>
 int ArbolRN<T>::tamano() {
-    return set.size();
+    return set.size(); 
 }
 
 template <typename T>

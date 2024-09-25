@@ -261,6 +261,7 @@ int main( int argc, char* argv[] )
       << std::endl;
 
   int tamPostElim = tamIns - miMonticulo.tamano();
+  
   if (!diferentes) {
     std::cout << "Elementos eliminados = "<< tamPostElim << std::endl;
     std::cout << "Numero de nodos despues de eliminar = "<< miArbolRN.tamano() << std::endl;
