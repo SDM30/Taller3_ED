@@ -15,6 +15,8 @@ public:
 
     bool remove(const T& val);
 
+    int tamano();
+
     void inordenEnLista(std::list<T>& resultado) const;
 };
 

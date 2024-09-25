@@ -21,6 +21,11 @@ bool ArbolRN<T>::remove(const T& val) {
 }
 
 template <typename T>
+int ArbolRN<T>::tamano() {
+    return set.size();
+}
+
+template <typename T>
 void ArbolRN<T>::inordenEnLista(std::list<T>& resultado) const {
     for (const T& elem : set) {
         resultado.push_back(elem);  // Los elementos ya estan en orden inorden

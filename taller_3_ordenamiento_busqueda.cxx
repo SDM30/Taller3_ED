@@ -125,6 +125,7 @@ int main( int argc, char* argv[] )
   TList::iterator itRN;
   TList::iterator itHeap;
   bool diferentes = false;
+  int tamIns = 0;
 
   for (itAVL = inordenAVL.begin(), itRN = inordenRN.begin(), itHeap = inordenHeap.begin();itAVL != inordenAVL.end(); itAVL++, itRN++, itHeap++) {
     Song cancionAVL = *itAVL;
@@ -153,7 +154,9 @@ int main( int argc, char* argv[] )
   }
 
   if (!diferentes) {
+    tamIns = miArbolAVL.tamano();
     std::cout << "Todos los recorridos coinciden." << std::endl;
+    std::cout << "Elementos insertados = "<< tamIns << std::endl;
   }
   
   
@@ -193,7 +196,7 @@ int main( int argc, char* argv[] )
 
   // busqueda en monticulo y calcular el tiempo empleado
   std::clock_t inicioBusquedaHeap = std::clock( );
-  bool BusquedaHeap = searchData( miMonticulo, argv[ 2 ] );
+  bool BusquedaHeap = searchData( miMonticulo, argv[ 3 ] );
   std::clock_t finBusquedaHeap = std::clock( );
   double tiempoBusquedaHeap = ( finBusquedaHeap - inicioBusquedaHeap ) / double( CLOCKS_PER_SEC );
   if( BusquedaHeap )
@@ -203,14 +206,12 @@ int main( int argc, char* argv[] )
       << std::endl;
   else
     std::cout
-      << "Error al leer \"" << argv[ 2 ]
+      << "Error al leer \"" << argv[ 3 ]
       << "\" para busqueda el monticulo."
       << std::endl;
 
   
   /* ELIMINACION DE DATOS */
-
-
   // eliminacion en arbol rojinegro y calcular el tiempo empleado
   std::clock_t inicioeliminacionRN = std::clock( );
   bool eliminacionRN = deleteData( miArbolRN, argv[ 2 ] );
@@ -258,6 +259,12 @@ int main( int argc, char* argv[] )
       << "Error al leer \"" << argv[ 2 ]
       << "\" para eliminacion el monticulo."
       << std::endl;
+
+  int tamPostElim = tamIns - miMonticulo.tamano();
+  if (!diferentes) {
+    std::cout << "Elementos eliminados = "<< tamPostElim << std::endl;
+    std::cout << "Numero de nodos despues de eliminar = "<< miArbolRN.tamano() << std::endl;
+  }
   
   return( 0 );
 }
